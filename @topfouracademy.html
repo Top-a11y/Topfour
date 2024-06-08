@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Four Academy</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        h1, h2 {
+            color: darkblue;
+        }
+        p, label {
+            color: darkgreen;
+        }
+        form {
+            background-color: lightgreen;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        input[type="submit"] {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>TOP FOUR ACADEMY</h1>
+    <P>Get study package for only M45.00</P>
+    <p>Faculty of Health Sciences and Science and Technology</p>
+    <form id="contactForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+        <label for="transactionId">Transaction ID:</label>
+        <input type="text" id="transactionId" name="transactionId" required><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h2>Payment Details:</h2>
+    <ul>
+        <li>Mpesa: 57331801 (Senakal)</li>
+        <li>Ecocash: 63947686 (Khoele)</li>
+    </ul>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var transactionId = document.getElementById('transactionId').value;
+            var body = 'Email: ' + email + '%0D%0A' + 'Phone Number: ' + phone + '%0D%0A' + 'Transaction ID: ' + transactionId;
+            window.location = 'mailto:topfouracademy@gmail.com?subject=Contact&body=' + body;
+        });
+    </script>
+</body>
+</html>
